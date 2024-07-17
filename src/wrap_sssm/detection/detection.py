@@ -18,7 +18,7 @@ from matplotlib.colors import Normalize
 from matplotlib.cm import get_cmap
 import matplotlib.pyplot as plt
 import ipywidgets as ipy
-from ..utils.io import set_log_level
+from wrap_sssm.utils.io import set_log_level
 from sssm import ssm
 from yasa.numba import _detrend, _rms
 from yasa.spectral import stft_power

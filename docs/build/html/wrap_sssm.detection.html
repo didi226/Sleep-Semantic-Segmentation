@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>wrap_sssm.detection package &mdash; Sleep Semantic Segmentation 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Sleep Semantic Segmentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">wrap_sssm.detection package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-wrap_sssm.detection.detection">wrap_sssm.detection.detection module</a><ul>
+<li><a class="reference internal" href="#wrap_sssm.detection.detection.SleepEventDetect"><code class="docutils literal notranslate"><span class="pre">SleepEventDetect</span></code></a><ul>
+<li><a class="reference internal" href="#wrap_sssm.detection.detection.SleepEventDetect.calculate_feature"><code class="docutils literal notranslate"><span class="pre">SleepEventDetect.calculate_feature()</span></code></a></li>
+<li><a class="reference internal" href="#wrap_sssm.detection.detection.SleepEventDetect.calculate_feature_other"><code class="docutils literal notranslate"><span class="pre">SleepEventDetect.calculate_feature_other()</span></code></a></li>
+<li><a class="reference internal" href="#wrap_sssm.detection.detection.SleepEventDetect.calculate_feature_slow_wave"><code class="docutils literal notranslate"><span class="pre">SleepEventDetect.calculate_feature_slow_wave()</span></code></a></li>
+<li><a class="reference internal" href="#wrap_sssm.detection.detection.SleepEventDetect.calculate_feature_spindle"><code class="docutils literal notranslate"><span class="pre">SleepEventDetect.calculate_feature_spindle()</span></code></a></li>
+<li><a class="reference internal" href="#wrap_sssm.detection.detection.SleepEventDetect.plot_average"><code class="docutils literal notranslate"><span class="pre">SleepEventDetect.plot_average()</span></code></a></li>
+<li><a class="reference internal" href="#wrap_sssm.detection.detection.SleepEventDetect.plot_detection"><code class="docutils literal notranslate"><span class="pre">SleepEventDetect.plot_detection()</span></code></a></li>
+<li><a class="reference internal" href="#wrap_sssm.detection.detection.SleepEventDetect.summary"><code class="docutils literal notranslate"><span class="pre">SleepEventDetect.summary()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#wrap_sssm.detection.detection.sleep_event_detect"><code class="docutils literal notranslate"><span class="pre">sleep_event_detect()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-wrap_sssm.detection">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Sleep Semantic Segmentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">wrap_sssm.detection package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/wrap_sssm.detection.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="wrap-sssm-detection-package">
+<h1>wrap_sssm.detection package<a class="headerlink" href="#wrap-sssm-detection-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-wrap_sssm.detection.detection">
+<span id="wrap-sssm-detection-detection-module"></span><h2>wrap_sssm.detection.detection module<a class="headerlink" href="#module-wrap_sssm.detection.detection" title="Link to this heading"></a></h2>
+<p>Sleep Semantic Segmentation: fast and robust detection of ‘Spindle’,
+‘Background’, ‘Arousal’,’K-complex’, ‘Slow wave’, ‘Vertex Sharp’, ‘Sawtooth’ from one channel sleep EEG recordings.
+- Author: Xiaoyu Bao
+- GitHub:
+- License:</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="wrap_sssm.detection.detection.SleepEventDetect">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">wrap_sssm.detection.detection.</span></span><span class="sig-name descname"><span class="pre">SleepEventDetect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wave_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thresh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overall_threshold</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wrap_sssm/detection/detection.html#SleepEventDetect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wrap_sssm.detection.detection.SleepEventDetect" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="wrap_sssm.detection.detection.SleepEventDetect.calculate_feature">
+<span class="sig-name descname"><span class="pre">calculate_feature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wrap_sssm/detection/detection.html#SleepEventDetect.calculate_feature"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wrap_sssm.detection.detection.SleepEventDetect.calculate_feature" title="Link to this definition"></a></dt>
+<dd><p>Calculates features for the specified event types.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event_type</strong> (<em>list</em><em>, </em><em>optional</em>) – List of event types to calculate features for. Defaults to None.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Calculated features for each event type.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wrap_sssm.detection.detection.SleepEventDetect.calculate_feature_other">
+<span class="sig-name descname"><span class="pre">calculate_feature_other</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i_event_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wrap_sssm/detection/detection.html#SleepEventDetect.calculate_feature_other"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wrap_sssm.detection.detection.SleepEventDetect.calculate_feature_other" title="Link to this definition"></a></dt>
+<dd><p>Retrieve features of other specified event types from EEG data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>i_event_type</strong> (<em>str</em>) – The event type for which features are to be retrieved.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DataFrame containing features of the specified event type.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wrap_sssm.detection.detection.SleepEventDetect.calculate_feature_slow_wave">
+<span class="sig-name descname"><span class="pre">calculate_feature_slow_wave</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wrap_sssm/detection/detection.html#SleepEventDetect.calculate_feature_slow_wave"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wrap_sssm.detection.detection.SleepEventDetect.calculate_feature_slow_wave" title="Link to this definition"></a></dt>
+<dd><p>Calculate features of slow waves from EEG data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>freq_sw</strong> (<em>tuple</em>) – Frequency range for slow wave detection (default: (0.3, 1.5)).</p></li>
+<li><p><strong>amp_neg</strong> (<em>tuple</em>) – Amplitude range for negative peaks (default: (40, 200)).</p></li>
+<li><p><strong>amp_pos</strong> (<em>tuple</em>) – Amplitude range for positive peaks (default: (10, 150)).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>DataFrame containing slow wave features including NegPeak,</dt><dd><p>MidCrossing, PosPeak, ValNegPeak, ValPosPeak, PTP, Slope,
+and Frequency.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function is based on the original implementation provided by <a class="reference external" href="https://github.com/raphaelvallat/yasa">https://github.com/raphaelvallat/yasa</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wrap_sssm.detection.detection.SleepEventDetect.calculate_feature_spindle">
+<span class="sig-name descname"><span class="pre">calculate_feature_spindle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wrap_sssm/detection/detection.html#SleepEventDetect.calculate_feature_spindle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wrap_sssm.detection.detection.SleepEventDetect.calculate_feature_spindle" title="Link to this definition"></a></dt>
+<dd><p>Calculate features of sleep spindles from EEG data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>freq_sp</strong> (<em>tuple</em>) – Frequency range for spindle detection (default: (12, 15)).</p></li>
+<li><p><strong>freq_broad</strong> (<em>tuple</em>) – Broad frequency range for filtering (default: (1, 30)).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>DataFrame containing spindle features including Peak, Duration,</dt><dd><p>Amplitude, RMS, AbsPower, RelPower, Frequency, Oscillations, and Symmetry.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This function is based on the original implementation provided by <a class="reference external" href="https://github.com/raphaelvallat/yasa">https://github.com/raphaelvallat/yasa</a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wrap_sssm.detection.detection.SleepEventDetect.plot_average">
+<span class="sig-name descname"><span class="pre">plot_average</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(6,</span> <span class="pre">4.5)</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wrap_sssm/detection/detection.html#SleepEventDetect.plot_average"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wrap_sssm.detection.detection.SleepEventDetect.plot_average" title="Link to this definition"></a></dt>
+<dd><p>Plots the average waveform of specified event types.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>event_type</strong> (<em>list</em><em>, </em><em>optional</em>) – List of event types to plot. Defaults to None.</p></li>
+<li><p><strong>figsize</strong> (<em>tuple</em><em>, </em><em>optional</em>) – Figure size for the subplot. Defaults to (6, 4.5).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Axes of the average sleep event plot.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wrap_sssm.detection.detection.SleepEventDetect.plot_detection">
+<span class="sig-name descname"><span class="pre">plot_detection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(12,</span> <span class="pre">4)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cmap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Spectral'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wrap_sssm/detection/detection.html#SleepEventDetect.plot_detection"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wrap_sssm.detection.detection.SleepEventDetect.plot_detection" title="Link to this definition"></a></dt>
+<dd><p>Plots the detection of specified event types.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>event_type</strong> (<em>list</em><em>, </em><em>optional</em>) – List of event types to plot. Defaults to None.</p></li>
+<li><p><strong>figsize</strong> (<em>tuple</em><em>, </em><em>optional</em>) – Figure size for the plot. Defaults to (12, 4).</p></li>
+<li><p><strong>cmap</strong> (<em>str</em><em>, </em><em>optional</em>) – Colormap for plotting. Defaults to ‘Spectral’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Interactive plot object.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>interactive</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wrap_sssm.detection.detection.SleepEventDetect.summary">
+<span class="sig-name descname"><span class="pre">summary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/wrap_sssm/detection/detection.html#SleepEventDetect.summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wrap_sssm.detection.detection.SleepEventDetect.summary" title="Link to this definition"></a></dt>
+<dd><p>Provides a summary of detected events.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>event detail information for all wave_name.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="wrap_sssm.detection.detection.sleep_event_detect">
+<span class="sig-prename descclassname"><span class="pre">wrap_sssm.detection.detection.</span></span><span class="sig-name descname"><span class="pre">sleep_event_detect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wave_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['Spindle',</span> <span class="pre">'Background',</span> <span class="pre">'Arousal',</span> <span class="pre">'K-complex',</span> <span class="pre">'Slow</span> <span class="pre">wave',</span> <span class="pre">'Vertex</span> <span class="pre">Sharp',</span> <span class="pre">'Sawtooth']</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cuda'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'model.pt'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{'Arousal':</span> <span class="pre">0.9,</span> <span class="pre">'Background':</span> <span class="pre">0.9,</span> <span class="pre">'K-complex':</span> <span class="pre">0.6,</span> <span class="pre">'Sawtooth':</span> <span class="pre">0.6,</span> <span class="pre">'Slow</span> <span class="pre">wave':</span> <span class="pre">0.6,</span> <span class="pre">'Spindle':</span> <span class="pre">0.95,</span> <span class="pre">'Vertex</span> <span class="pre">Sharp':</span> <span class="pre">0.6}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overall_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wrap_sssm/detection/detection.html#sleep_event_detect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wrap_sssm.detection.detection.sleep_event_detect" title="Link to this definition"></a></dt>
+<dd><p>Detects sleep events in the provided data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>array-like</em>) – Input data for sleep event detection.</p></li>
+<li><p><strong>sf</strong> (<em>float</em><em>, </em><em>optional</em>) – Sampling frequency. Defaults to None.</p></li>
+<li><p><strong>wave_name</strong> (<em>list</em><em>, </em><em>optional</em>) – List of wave names. Defaults to
+[‘Spindle’, ‘Background’, ‘Arousal’, ‘K-complex’, ‘Slow wave’,
+‘Vertex Sharp’, ‘Sawtooth’].</p></li>
+<li><p><strong>device</strong> (<em>str</em><em>, </em><em>optional</em>) – Device to run the model on. Defaults to ‘cuda’.</p></li>
+<li><p><strong>model_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the model file. Defaults to ‘model.pt’.</p></li>
+<li><p><strong>model_path</strong> (<em>str</em><em>, </em><em>optional</em>) – Path to the model file. Defaults to None.</p></li>
+<li><p><strong>step</strong> (<em>int</em><em>, </em><em>optional</em>) – Step size for detection. Defaults to 50.</p></li>
+<li><p><strong>event_threshold</strong> (<em>dict</em><em>, </em><em>optional</em>) – Thresholds for each event. Defaults to
+{‘Spindle’: 0.95, ‘Background’: 0.9, ‘Arousal’: 0.9, ‘K-complex’: 0.6,
+‘Slow wave’: 0.6, ‘Vertex Sharp’: 0.6, ‘Sawtooth’: 0.6}.</p></li>
+<li><p><strong>overall_threshold</strong> (<em>float</em><em>, </em><em>optional</em>) – Overall detection threshold.
+Defaults to 0.5.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em><em>, </em><em>optional</em>) – Verbose output. Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The detected sleep events.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>results</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-wrap_sssm.detection">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-wrap_sssm.detection" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, XiaoYu Bao &amp; Di Chen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
