@@ -11,8 +11,6 @@ LOGGING_TYPES = dict(
     ERROR=logging.ERROR,
     CRITICAL=logging.CRITICAL,
 )
-
-
 def set_log_level(verbose=None):
     """Convenience function for setting the logging level.
 
