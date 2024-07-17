@@ -1,0 +1,17 @@
+import setuptools
+from setuptools import find_packages
+
+# with open("README.md", "r") as fh:
+#     long_description = fh.read()
+
+setuptools.setup(
+    name="wrap_sssm",
+    version="0.0.1",
+    author="chendi",
+    author_email="3517725675@qq.com",
+    description="a wrapper of sssm",
+    long_description_content_type="text/markdown",
+    packages=find_packages('src'),
+    package_dir={"": "src"},
+    install_requires=[],
+)

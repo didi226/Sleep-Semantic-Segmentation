@@ -1,0 +1,13 @@
+*build*
+*egg-info*
+*~
+*.mat
+*.npy
+*.npz
+*.pdf
+*.ipynb
+**/__pycache__
+/test
+*.idea/
+*.pyc
+*.edf
