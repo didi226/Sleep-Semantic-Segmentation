@@ -84,7 +84,7 @@ overall_threshold=0.5,
             event_threshold[i_thresh] = thresh_standard[i_thresh]
     model = ssm.SSM(device=device, model_name=model_name, model_path=model_path)
     return SleepEventDetect(model, wave_name, data, sf, event_threshold,step,overall_threshold)
-#_DetectionResults
+
 class SleepEventDetect():
     def __init__(self, model, wave_name, data, sf, thresh,step,overall_threshold):
         """Initializes the SleepEventDetect class.

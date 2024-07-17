@@ -11,3 +11,4 @@
 *.pyc
 *.edf
 notebooks/draft.ipynb
+*.zip
