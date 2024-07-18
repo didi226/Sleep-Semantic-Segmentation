@@ -43,7 +43,7 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=55ff85c6"></script>
+    <script src="../../_static/documentation_options.js?v=5aa371e9"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -69,7 +69,6 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Jul 18, 2024"/>
 
 
 
@@ -134,7 +133,7 @@
   </button>
   
   
-  <div class=" navbar-header-items__start">
+  <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
 
@@ -163,7 +162,7 @@
     
   </div>
   
-  <div class=" navbar-header-items">
+  <div class="col-lg-9 navbar-header-items">
     
     <div class="me-auto navbar-header-items__center">
       
@@ -450,7 +449,7 @@ from wrap_sssm.detection.detection import sleep_event_detect
 sns.set(font_scale=1.2)
 get_ipython().run_line_magic(“matplotlib”, “ widget”)</p>
 <p># os.chdir(r”D:code_cloudnew_eeg_deepscut_eeg_dlwrap_sssmnotebookes”)
-raw = mne.io.read_raw_edf(‘SC4001E0-PSG.edf’, preload=True)</p>
+raw = mne.io.read_raw_edf(‘../../../notebookes/SC4001E0-PSG.edf’, preload=True)</p>
 <p>raw.filter(0.1, 40)
 data = raw.get_data([‘EEG Fpz-Cz’], units=”uV”)
 sf = 100
@@ -512,22 +511,6 @@ sp.summary()</p>
 
   </nav></div>
 
-  <div class="sidebar-secondary-item">
-
-  
-  <div class="tocsection editthispage">
-    <a href="https://github.com/pydata/pydata-sphinx-theme/edit/main/docs/example/.virtual_documents/test_wrap_sssm.ipynb">
-      <i class="fa-solid fa-pencil"></i>
-      
-      
-        
-          Edit on GitHub
-        
-      
-    </a>
-  </div>
-</div>
-
 </div></div>
               
             
@@ -559,11 +542,6 @@ sp.summary()</p>
   </p>
 </div>
       
-    </div>
-  
-  
-    <div class="footer-items__center">
-      
         <div class="footer-item">
 
   <p class="sphinx-version">
@@ -573,6 +551,7 @@ sp.summary()</p>
 </div>
       
     </div>
+  
   
   
     <div class="footer-items__end">
