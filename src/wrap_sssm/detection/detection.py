@@ -108,17 +108,32 @@ class SleepEventDetect():
         self.event_df = self._model.to_pandas(overall_threshold=overall_threshold, event_threshold=self._event_threshold)
         self._times = np.arange(  self._data .shape[-1]) / self._sf
 
-    def summary(self):
+    def summary(self,event=None):
         """Provides a summary of detected events.
 
+        Args:
+            event (str, optional): The specific event name to summarize. Defaults to None.
+
         Returns:
-            dict:  event detail information for all wave_name.
+            dict or pd.DataFrame: If event is None, returns a dictionary with event details for all wave_names.
+                                  If event is provided, returns the details for the specified event.
+
+        Raises:
+            ValueError: If the specified event is not in the wave names.
         """
+
         filtered_df = self.calculate_feature()
-        for i_event in filtered_df.keys():
-            print(i_event)
-            print(filtered_df[i_event])
-        return filtered_df
+        if event is None:
+            for i_event in filtered_df.keys():
+                print(i_event)
+                print(filtered_df[i_event])
+            return filtered_df
+        elif  event in self._wave_name:
+            return filtered_df[event]
+        else:
+            raise ValueError(f'sleep event {event} is not corrected')
+
+
     def _get_event_df(self, wave_names):
         """Filters the event dataframe by wave names.
 

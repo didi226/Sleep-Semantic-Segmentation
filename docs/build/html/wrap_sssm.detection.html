@@ -236,14 +236,24 @@ and Frequency.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="wrap_sssm.detection.detection.SleepEventDetect.summary">
-<span class="sig-name descname"><span class="pre">summary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/wrap_sssm/detection/detection.html#SleepEventDetect.summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wrap_sssm.detection.detection.SleepEventDetect.summary" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/wrap_sssm/detection/detection.html#SleepEventDetect.summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#wrap_sssm.detection.detection.SleepEventDetect.summary" title="Link to this definition"></a></dt>
 <dd><p>Provides a summary of detected events.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>event detail information for all wave_name.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event</strong> (<em>str</em><em>, </em><em>optional</em>) – The specific event name to summarize. Defaults to None.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>dict</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>If event is None, returns a dictionary with event details for all wave_names.</dt><dd><p>If event is provided, returns the details for the specified event.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict or pd.DataFrame</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the specified event is not in the wave names.</p>
 </dd>
 </dl>
 </dd></dl>

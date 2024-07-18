@@ -185,17 +185,32 @@
 
 <div class="viewcode-block" id="SleepEventDetect.summary">
 <a class="viewcode-back" href="../../../wrap_sssm.detection.html#wrap_sssm.detection.detection.SleepEventDetect.summary">[docs]</a>
-    <span class="k">def</span> <span class="nf">summary</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">event</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Provides a summary of detected events.</span>
 
+<span class="sd">        Args:</span>
+<span class="sd">            event (str, optional): The specific event name to summarize. Defaults to None.</span>
+
 <span class="sd">        Returns:</span>
-<span class="sd">            dict:  event detail information for all wave_name.</span>
+<span class="sd">            dict or pd.DataFrame: If event is None, returns a dictionary with event details for all wave_names.</span>
+<span class="sd">                                  If event is provided, returns the details for the specified event.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: If the specified event is not in the wave names.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+
         <span class="n">filtered_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calculate_feature</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">i_event</span> <span class="ow">in</span> <span class="n">filtered_df</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">i_event</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">filtered_df</span><span class="p">[</span><span class="n">i_event</span><span class="p">])</span>
-        <span class="k">return</span> <span class="n">filtered_df</span></div>
+        <span class="k">if</span> <span class="n">event</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i_event</span> <span class="ow">in</span> <span class="n">filtered_df</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">i_event</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">filtered_df</span><span class="p">[</span><span class="n">i_event</span><span class="p">])</span>
+            <span class="k">return</span> <span class="n">filtered_df</span>
+        <span class="k">elif</span>  <span class="n">event</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_wave_name</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">filtered_df</span><span class="p">[</span><span class="n">event</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;sleep event </span><span class="si">{</span><span class="n">event</span><span class="si">}</span><span class="s1"> is not corrected&#39;</span><span class="p">)</span></div>
+
+
 
     <span class="k">def</span> <span class="nf">_get_event_df</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wave_names</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Filters the event dataframe by wave names.</span>
