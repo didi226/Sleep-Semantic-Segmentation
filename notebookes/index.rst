@@ -1,5 +1,4 @@
 Example
-**********
 
 .. toctree::
    :maxdepth: 1
