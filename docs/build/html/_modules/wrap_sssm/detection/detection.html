@@ -255,17 +255,6 @@ document.write(`
           
           <a href="https://pypi.org/project/sssm/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../../_static/PyPI.svg" class="icon-link-image" alt="PyPI"/></a>
         </li>
-        <li class="nav-item">
-          
-          
-          
-          
-          
-          
-          
-          
-          <a href="https://sleep-semantic-segmentation.readthedocs.io/en/latest/" title="SSS" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../../_static/logo_only.png" class="icon-link-image" alt="SSS"/></a>
-        </li>
 </ul></div>
       
     </div>
@@ -389,17 +378,6 @@ document.write(`
           
           <a href="https://pypi.org/project/sssm/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../../_static/PyPI.svg" class="icon-link-image" alt="PyPI"/></a>
         </li>
-        <li class="nav-item">
-          
-          
-          
-          
-          
-          
-          
-          
-          <a href="https://sleep-semantic-segmentation.readthedocs.io/en/latest/" title="SSS" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><img src="../../../_static/logo_only.png" class="icon-link-image" alt="SSS"/></a>
-        </li>
 </ul></div>
         
       </div>
@@ -495,7 +473,7 @@ document.write(`
 <span class="p">]</span>
 
 <div class="viewcode-block" id="sleep_event_detect">
-<a class="viewcode-back" href="../../../wrap_sssm.detection.html#wrap_sssm.detection.detection.sleep_event_detect">[docs]</a>
+<a class="viewcode-back" href="../../../api/wrap_sssm/detection/detection/index.html#wrap_sssm.detection.detection.sleep_event_detect">[docs]</a>
 <span class="k">def</span>  <span class="nf">sleep_event_detect</span><span class="p">(</span>
     <span class="n">data</span><span class="p">,</span>
     <span class="n">sf</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -550,7 +528,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="SleepEventDetect">
-<a class="viewcode-back" href="../../../wrap_sssm.detection.html#wrap_sssm.detection.detection.SleepEventDetect">[docs]</a>
+<a class="viewcode-back" href="../../../api/wrap_sssm/detection/detection/index.html#wrap_sssm.detection.detection.SleepEventDetect">[docs]</a>
 <span class="k">class</span> <span class="nc">SleepEventDetect</span><span class="p">():</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">wave_name</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">sf</span><span class="p">,</span> <span class="n">thresh</span><span class="p">,</span><span class="n">step</span><span class="p">,</span><span class="n">overall_threshold</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initializes the SleepEventDetect class.</span>
@@ -575,7 +553,7 @@ document.write(`
         <span class="bp">self</span><span class="o">.</span><span class="n">_times</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span>  <span class="bp">self</span><span class="o">.</span><span class="n">_data</span> <span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sf</span>
 
 <div class="viewcode-block" id="SleepEventDetect.summary">
-<a class="viewcode-back" href="../../../wrap_sssm.detection.html#wrap_sssm.detection.detection.SleepEventDetect.summary">[docs]</a>
+<a class="viewcode-back" href="../../../api/wrap_sssm/detection/detection/index.html#wrap_sssm.detection.detection.SleepEventDetect.summary">[docs]</a>
     <span class="k">def</span> <span class="nf">summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">event</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Provides a summary of detected events.</span>
 
@@ -620,7 +598,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="SleepEventDetect.plot_average">
-<a class="viewcode-back" href="../../../wrap_sssm.detection.html#wrap_sssm.detection.detection.SleepEventDetect.plot_average">[docs]</a>
+<a class="viewcode-back" href="../../../api/wrap_sssm/detection/detection/index.html#wrap_sssm.detection.detection.SleepEventDetect.plot_average">[docs]</a>
     <span class="k">def</span> <span class="nf">plot_average</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event_type</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>  <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">),</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Plots the average waveform of specified event types.</span>
 
@@ -706,7 +684,7 @@ document.write(`
                             <span class="n">color</span><span class="o">=</span><span class="n">cmap</span><span class="p">(</span><span class="n">norm</span><span class="p">(</span><span class="n">index</span><span class="p">)),</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i_event</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="SleepEventDetect.plot_detection">
-<a class="viewcode-back" href="../../../wrap_sssm.detection.html#wrap_sssm.detection.detection.SleepEventDetect.plot_detection">[docs]</a>
+<a class="viewcode-back" href="../../../api/wrap_sssm/detection/detection/index.html#wrap_sssm.detection.detection.SleepEventDetect.plot_detection">[docs]</a>
     <span class="k">def</span> <span class="nf">plot_detection</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event_type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Spectral&#39;</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Plots the detection of specified event types.</span>
 
@@ -800,7 +778,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="SleepEventDetect.calculate_feature">
-<a class="viewcode-back" href="../../../wrap_sssm.detection.html#wrap_sssm.detection.detection.SleepEventDetect.calculate_feature">[docs]</a>
+<a class="viewcode-back" href="../../../api/wrap_sssm/detection/detection/index.html#wrap_sssm.detection.detection.SleepEventDetect.calculate_feature">[docs]</a>
     <span class="k">def</span> <span class="nf">calculate_feature</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event_type</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculates features for the specified event types.</span>
 
@@ -825,7 +803,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="SleepEventDetect.calculate_feature_spindle">
-<a class="viewcode-back" href="../../../wrap_sssm.detection.html#wrap_sssm.detection.detection.SleepEventDetect.calculate_feature_spindle">[docs]</a>
+<a class="viewcode-back" href="../../../api/wrap_sssm/detection/detection/index.html#wrap_sssm.detection.detection.SleepEventDetect.calculate_feature_spindle">[docs]</a>
     <span class="k">def</span> <span class="nf">calculate_feature_spindle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculate features of sleep spindles from EEG data.</span>
 
@@ -909,7 +887,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="SleepEventDetect.calculate_feature_slow_wave">
-<a class="viewcode-back" href="../../../wrap_sssm.detection.html#wrap_sssm.detection.detection.SleepEventDetect.calculate_feature_slow_wave">[docs]</a>
+<a class="viewcode-back" href="../../../api/wrap_sssm/detection/detection/index.html#wrap_sssm.detection.detection.SleepEventDetect.calculate_feature_slow_wave">[docs]</a>
     <span class="k">def</span> <span class="nf">calculate_feature_slow_wave</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculate features of slow waves from EEG data.</span>
 
@@ -1019,7 +997,7 @@ document.write(`
         <span class="k">return</span> <span class="n">combined_df</span></div>
 
 <div class="viewcode-block" id="SleepEventDetect.calculate_feature_other">
-<a class="viewcode-back" href="../../../wrap_sssm.detection.html#wrap_sssm.detection.detection.SleepEventDetect.calculate_feature_other">[docs]</a>
+<a class="viewcode-back" href="../../../api/wrap_sssm/detection/detection/index.html#wrap_sssm.detection.detection.SleepEventDetect.calculate_feature_other">[docs]</a>
     <span class="k">def</span> <span class="nf">calculate_feature_other</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">i_event_type</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Retrieve features of other specified event types from EEG data.</span>
 
