@@ -139,12 +139,14 @@ html_theme_options = {
             "url": "https://pypi.org/project/sssm/",
             "icon": "_static/PyPI.svg",
             "type": "local",
-        },   {
-            "name": "SSS",
-            "url": "https://sleep-semantic-segmentation.readthedocs.io/en/latest/",
-            "icon": "_static/logo_only.png",
-            "type": "local",
-        }],
+        },   
+        # {
+        #     "name": "SSS",
+        #     "url": "https://sleep-semantic-segmentation.readthedocs.io/en/latest/",
+        #     "icon": "_static/logo_only.png",
+        #     "type": "local",
+        # }
+        ],
         "announcement": "This is a community-supported sleep semantic segmentation algorithm. If you'd like to contribute, check out  <a href='https://github.com/didi226/Sleep-Semantic-Segmentation'>our GitHub repository</a>. Your contributions are welcome! ",
         "use_edit_page_button": True,
         "show_toc_level": 2,

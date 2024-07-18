@@ -26,7 +26,7 @@ sphinx.ext.coverage
 sphinx.ext.mathjax
 myst_parser
 ablog
-jupyter_sphinx
+jupyterlite-sphinx
 sphinxcontrib.youtube
 nbsphinx
 numpydoc
