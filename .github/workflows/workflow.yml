@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest #运行在乌班图linux上
     steps:
       - name: Checkout  #步骤1：checkout
-        uses: actions/checkout@v2.3.1 #checkout需要引用的依赖
+        uses: actions/checkout@v4 #checkout需要引用的依赖
         with:
           persist-credentials: false #checkout依赖参数：不保存证书
       - name: install and build #步骤2：安装依赖和打包
@@ -16,10 +16,12 @@ jobs:
           --user
 
       - name: Install SSH Client #步骤3：关联ssh私钥
-        uses: webfactory/ssh-agent@v0.2.0 #这里调用这个第三方的库，可以直接关联ssh私钥
+        uses:  webfactory/ssh-agent@v0.9.0 #这里调用这个第三方的库，可以直接关联ssh私钥
         with: #下面是参数
           #这里需要通过github的环境参数中获取私钥，并传给这个库，（这是最安全的，git当然不能让用户直接输入私钥内容）
-          ssh-private-key: ${{ secrets.didi_key}} 
+          ssh-private-key: |
+            ${{secrets.didi_key}} 
+            ${{secrets.15956@DESKTOP-RSMCMGK}} 
 
       - name: Deploy #步骤4：把编译好的静态目录上传到gh-pages分支上
         uses: JamesIves/github-pages-deploy-action@3.5.9 #这里调用第三方依赖，用于上传代码到指定分支上
