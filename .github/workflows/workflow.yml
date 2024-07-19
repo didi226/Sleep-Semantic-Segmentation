@@ -19,7 +19,7 @@ jobs:
         uses: webfactory/ssh-agent@v0.4.0 #这里调用这个第三方的库，可以直接关联ssh私钥
         with: #下面是参数
           #这里需要通过github的环境参数中获取私钥，并传给这个库，（这是最安全的，git当然不能让用户直接输入私钥内容）
-          ssh-private-key: ${{ secrets.DEPLOY_KEY }} 
+          ssh-private-key: ${{ didi_key.DEPLOY_KEY }} 
 
       - name: Deploy #步骤4：把编译好的静态目录上传到gh-pages分支上
         uses: JamesIves/github-pages-deploy-action@3.5.9 #这里调用第三方依赖，用于上传代码到指定分支上
