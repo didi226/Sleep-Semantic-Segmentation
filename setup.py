@@ -5,13 +5,22 @@ from setuptools import find_packages
 #     long_description = fh.read()
 
 setuptools.setup(
-    name="wrap_sssm",
-    version="0.0.1",
+    name="sssm",
+    version="0.0.2",
     author="chendi",
     author_email="3517725675@qq.com",
     description="a wrapper of sssm",
     long_description_content_type="text/markdown",
     packages=find_packages('src'),
     package_dir={"": "src"},
-    install_requires=[],
+    install_requires=[
+        'requests',
+        'importlib-metadata',
+        'torch',
+        'pandas',
+        'einops',
+        'seaborn',
+        'numpy',
+        'scipy',
+        'matplotlib',],
 )

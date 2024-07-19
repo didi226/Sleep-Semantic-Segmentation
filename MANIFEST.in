@@ -1,0 +1,1 @@
+include src/sssm_core/saved_models/*.pt
