@@ -18,7 +18,7 @@ sys.path.append(str(Path(".").resolve()))
 project = 'Sleep Semantic Segmentation'
 copyright = '2024, Sleep Semantic Segmentation Community'
 author = 'XiaoYu Bao & Di Chen'
-
+version= '0.0.1'
 release = '0.0.1'
 extensions = [ 
     'sphinx.ext.napoleon',
@@ -76,7 +76,7 @@ myst_substitutions = {"rtd": "[Read the Docs](https://readthedocs.org/)"}
 language = "en"
 
 # -- Ablog options -----------------------------------------------------------
-
+html_show_sphinx = False
 blog_path = "examples/blog/index"
 blog_authors = {
     "pydata": ("PyData", "https://pydata.org"),
@@ -114,6 +114,9 @@ autoapi_dirs = ["../../src/wrap_sssm"]
 autoapi_keep_files = True
 autoapi_root = "api"
 autoapi_member_order = "groupwise"
+
+
+suppress_warnings = ["autoapi.python_import_resolution", "autoapi.not_readable"]
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output

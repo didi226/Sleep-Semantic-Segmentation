@@ -446,10 +446,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from wrap_sssm.detection.detection import sleep_event_detect
-sns.set(font_scale=1.2)
-get_ipython().run_line_magic(“matplotlib”, “ widget”)</p>
-<p># os.chdir(r”D:code_cloudnew_eeg_deepscut_eeg_dlwrap_sssmnotebookes”)
-raw = mne.io.read_raw_edf(‘../../../notebookes/SC4001E0-PSG.edf’, preload=True)</p>
+sns.set(font_scale=1)
+get_ipython().run_line_magic(“matplotlib”, “ inline”)</p>
+<p>raw = mne.io.read_raw_edf(‘../../../notebookes/SC4001E0-PSG.edf’, preload=True)</p>
 <p>raw.filter(0.1, 40)
 data = raw.get_data([‘EEG Fpz-Cz’], units=”uV”)
 sf = 100
@@ -457,7 +456,7 @@ data = data[:,:50000]</p>
 <p># Define sampling frequency and time vector
 times = np.arange(data.shape[-1]) / sf</p>
 <p># Plot the signal
-fig, ax = plt.subplots(1, 1, figsize=(14, 4))
+fig, ax = plt.subplots(1, 1, figsize=(7, 2))
 plt.plot(times, data[0,:], lw=1.5, color=’k’)
 plt.xlabel(‘Time (seconds)’)
 plt.ylabel(‘Amplitude (uV)’)
@@ -469,8 +468,9 @@ sp = sleep_event_detect(data, sf)</p>
 <p># Display the results using .summary()
 sp.summary()</p>
 <p>sp.summary(‘Sawtooth’)</p>
-<p>sp.plot_detection(event_type=[‘K-complex’])</p>
-<p>figure = sp.plot_average(event_type=[‘Sawtooth’])
+<p>get_ipython().run_line_magic(“matplotlib”, “ widget”)
+sp.plot_detection(event_type=[‘Sawtooth’],figsize=(5, 4))</p>
+<p>figure = sp.plot_average(event_type=[‘Sawtooth’],figsize=(5, 3))
 plt.show()</p>
 <p>sp = sleep_event_detect(data, sf,verbose=’info’)
 sp.summary()</p>
@@ -539,14 +539,6 @@ sp.summary()</p>
       © Copyright 2024, Sleep Semantic Segmentation Community.
       <br/>
     
-  </p>
-</div>
-      
-        <div class="footer-item">
-
-  <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
-    <br/>
   </p>
 </div>
       

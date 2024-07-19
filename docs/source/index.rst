@@ -37,7 +37,9 @@ SSS-Python Homepage
 =======================================================
 
 .. toctree::
-   :glob:
+   .. :glob:
+   :hidden:
+   :includehidden:
    :maxdepth: 1
 
 
