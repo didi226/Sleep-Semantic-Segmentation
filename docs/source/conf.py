@@ -116,7 +116,7 @@ autoapi_root = "api"
 autoapi_member_order = "groupwise"
 
 
-suppress_warnings = ["autoapi.python_import_resolution", "autoapi.not_readable"]
+
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
