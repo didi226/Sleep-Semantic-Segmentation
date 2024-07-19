@@ -29,3 +29,7 @@ mne
 yasa
 scikit-learn
 ipywidgets
+torch
+pandas
+einops
+seaborn
