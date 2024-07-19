@@ -11,8 +11,8 @@ setuptools.setup(
     author_email="3517725675@qq.com",
     description="a wrapper of sssm",
     long_description_content_type="text/markdown",
-    packages=find_packages('src'),
-    package_dir={"": "src"},
+    packages=find_packages('sssm'),
+    package_dir={"": "sssm"},
     install_requires=[
         'requests',
         'importlib-metadata',
@@ -23,6 +23,6 @@ setuptools.setup(
         'numpy',
         'scipy',
         'matplotlib',
-ipywidgets
-mne],
+'ipywidgets',
+'mne'],
 )

@@ -110,7 +110,7 @@ autodoc_typehints = "description"
 autodoc_member_order = "groupwise"
 # -- Options for autoapi -------------------------------------------------------
 autoapi_type = "python"
-autoapi_dirs = ["../../src/wrap_sssm"]
+autoapi_dirs = ["../../sssm"]
 autoapi_keep_files = True
 autoapi_root = "api"
 autoapi_member_order = "groupwise"
@@ -202,4 +202,4 @@ html_show_sourcelink = False
 html_copy_source = False
 html_static_path = ['_static']
 # html_css_files = ["style.css"]
-sys.path.insert(0, os.path.abspath('../../src'))
+sys.path.insert(0, os.path.abspath('../../sssm'))
