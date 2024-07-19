@@ -5,9 +5,14 @@ jobs:
     runs-on: ubuntu-latest #运行在乌班图linux上
     steps:
       - name: Checkout  #步骤1：checkout
-        uses: actions/checkout@v2.3.1 #checkout需要引用的依赖
+        uses: actions/checkout@v4 #checkout需要引用的依赖
         with:
           persist-credentials: false #checkout依赖参数：不保存证书
+        name: python env
+        uses: actions/setup-python@v5
+        with:
+          python-version: 'pypy3.9' 
+
       - name: install and build #步骤2：安装依赖和打包
         run: | #运行下面两行命令
           python -m pip install build
