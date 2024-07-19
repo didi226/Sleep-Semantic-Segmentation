@@ -22,5 +22,7 @@ setuptools.setup(
         'seaborn',
         'numpy',
         'scipy',
-        'matplotlib',],
+        'matplotlib',
+ipywidgets
+mne],
 )

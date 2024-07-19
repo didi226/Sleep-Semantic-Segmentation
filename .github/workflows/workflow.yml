@@ -1,29 +1,57 @@
-name: "github actions build and deploy gh-pages" #流程名称
-on: [push] #当对当前仓库push代码的时候触发
-jobs: 
-  build-and-deploy: #脚本名称
-    runs-on: ubuntu-latest #运行在乌班图linux上
+name: Upload Python Package
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  release-build:
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout  #步骤1：checkout
-        uses: actions/checkout@v4 #checkout需要引用的依赖
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
         with:
-          persist-credentials: false #checkout依赖参数：不保存证书
-      - name: install and build #步骤2：安装依赖和打包
-        run: >-
-          python -m
-          pip install
-          build
-          --user
+          python-version: "3.9"
 
+      - name: Build release distributions
+        run: |
+          # NOTE: put your own distribution build steps here.
+          python -m pip install build
+          python -m build
 
-      - name: ssh client line
-        uses:  webfactory/ssh-agent@v0.9.0 #这里调用这个第三方的库，可以直接关联ssh私钥
-        with: #下面是参数
-          ssh-private-key:  ${{secrets.DIDI_KEY}} 
-
-      - name: Deploy #步骤4：把编译好的静态目录上传到gh-pages分支上
-        uses: JamesIves/github-pages-deploy-action@3.5.9 #这里调用第三方依赖，用于上传代码到指定分支上
+      - name: Upload distributions
+        uses: actions/upload-artifact@v4
         with:
-          SSH: true #是否通过ssh方式
-          BRANCH: gh-pages #github pages 默认的分支
-          FOLDER: dist #上传文件的目录，我这个目录在根目录下，如果是子目录可以这么写  docs/.vuepress/dist
+          name: release-dists
+          path: dist/
+
+  pypi-publish:
+    runs-on: ubuntu-latest
+
+    needs:
+      - release-build
+
+    permissions:
+      # IMPORTANT: this permission is mandatory for trusted publishing
+      id-token: write
+
+    # Dedicated environments with protections for publishing are strongly recommended.
+    environment:
+      name: pypi
+      # OPTIONAL: uncomment and update to include your PyPI project URL in the deployment status:
+      # url: https://pypi.org/p/YOURPROJECT
+
+    steps:
+      - name: Retrieve release distributions
+        uses: actions/download-artifact@v4
+        with:
+          name: release-dists
+          path: dist/
+
+      - name: Publish release distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1

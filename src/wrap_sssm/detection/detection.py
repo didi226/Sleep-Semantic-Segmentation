@@ -19,7 +19,7 @@ from matplotlib.cm import get_cmap
 import matplotlib.pyplot as plt
 import ipywidgets as ipy
 from wrap_sssm.utils.io import set_log_level
-from sssm import ssm
+from sssm_core.model import Model as ssm
 from yasa.numba import _detrend, _rms
 from yasa.spectral import stft_power
 from yasa.others import (
@@ -539,7 +539,7 @@ class SleepEventDetect():
 if __name__ == '__main__':
     import mne
     # load data
-    raw = mne.io.read_raw_edf('SC4001E0-PSG.edf', preload=True)
+    raw = mne.io.read_raw_edf('./SC4001E0-PSG.edf', preload=True)
     raw.filter(0.1, 40)
     data = raw.get_data(['EEG Fpz-Cz'], units="uV")
     print(data.shape)

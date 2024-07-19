@@ -26,7 +26,6 @@ pydata_sphinx_theme
 jupyter_sphinx
 urllib3==1.26.15
 mne
-sssm
 yasa
 scikit-learn
 ipywidgets
