@@ -6,7 +6,7 @@ from setuptools import find_packages
 
 setuptools.setup(
     name="sssm",
-    version="0.0.2",
+    version="0.0.6",
     author="chendi",
     author_email="3517725675@qq.com",
     description="a wrapper of sssm",
