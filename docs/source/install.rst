@@ -9,7 +9,6 @@ Dependencies
 * ``mne`` (>=1.6)
 * ``numpy`` (>=1.21)
 * ``scipy`` (>=1.4.0)
-* ``sssm`` (>=0.0.5)
 
 
 We require that you use Python 3.9 or higher.
@@ -27,7 +26,7 @@ simply run the following at the root of the repository:
    # with python>=3.9 at least
    conda create -n sssm
    conda activate sssm
-   conda install -c conda-forge wrap_sssm
+   conda install -c conda-forge sssm
 
 
 Installation via Pip
@@ -39,7 +38,7 @@ simply run the following at the root of the repository:
 .. code-block:: bash
 
     python -m venv .venv
-    pip install -U wrap_sssm
+    pip install -U sssm
 
 If you want to install a snapshot of the current development version, run:
 
@@ -52,7 +51,7 @@ error messages:
 
 .. code-block:: bash
 
-   python -c 'import wrap_sssm'
+   python -c 'import sssm'
 
 sleep-semantic-segmentation works best with the latest stable release of SSSM. To ensure
 SSSM is up-to-date, run:
