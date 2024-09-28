@@ -16,11 +16,7 @@ pip install wrap_sssm-0.0.1-py3-none-any.whl
 
 ## Usage
 
-Sleep Semantic Segmentation
-
-```python
-
-```
+The detailed usage can be found in the package [Doument](https://sleep-semantic-segmentation.readthedocs.io/en/latest/)
 
 ## Cite 
 
