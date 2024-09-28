@@ -13,7 +13,7 @@ pip install sssm
 
 ## Usage
 
-The detailed usage can be found in the package [Doument](https://sleep-semantic-segmentation.readthedocs.io/en/latest/).
+The detailed usage can be found in the package [Document](https://sleep-semantic-segmentation.readthedocs.io/en/latest/).
 
 ## Cite 
 
